@@ -1,0 +1,31 @@
+<!--Table
+
+<table class="table table-hover" id="Birre" border="1">
+  <tr>
+    <th>ID</th>
+    <th>BeerName</th>
+    <th>BeerStyle</th>
+    <th>Upc</th>
+    <th>Price</th>
+    <th>CreatedDate</th>
+    <th>LastModifiedDate</th>
+  </tr>
+  <tr *ngFor="let birre of beers">
+    <td>{{ birre.id }}</td>
+    <td>{{ birre.beerName }}</td>
+    <td>{{ birre.beerStyle }}</td>
+    <td>{{ birre.upc }}</td>
+    <td>{{ birre.price }}</td>
+    <td>{{ birre.createdDate }}</td>
+    <td>{{ birre.lastModifiedDate }}</td>
+  </tr>
+</table>
+-->
+<div class="card-shadow">
+  <h5 class="card-header">Beer List</h5>
+  <div class="card-body">
+    <ul class="list-group" *ngFor="let beer of beers">
+      <li>{{ beer.beerName }}</li>
+    </ul>
+  </div>
+</div>
