@@ -47,10 +47,19 @@
         "
         formControlName="beerStyle"
       >
+        <option [ngValue]="null" disabled>Scegli la birra</option>
         <option *ngFor="let beerStyle of beerTypes" [ngValue]="beerStyle">
           {{ beerStyle }}
         </option>
       </select>
+      <button
+        type="submit"
+        [disabled]="beerForm.invalid"
+        class="btn btn-primary"
+        (click)="onSubmit()"
+      >
+        Submit
+      </button>
     </form>
   </div>
 </div>
