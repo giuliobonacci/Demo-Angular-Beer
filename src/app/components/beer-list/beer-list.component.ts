@@ -11,5 +11,6 @@ import { BeerService } from '../../services/beer.service';
 export class BeerListComponent implements OnInit {
   constructor(private beerService: BeerService) {}
   beers = this.beerService.getBeersList();
+
   ngOnInit() {}
 }
