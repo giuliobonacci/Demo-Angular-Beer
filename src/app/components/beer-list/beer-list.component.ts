@@ -9,8 +9,7 @@ import { BeerService } from '../../services/beer.service';
   styleUrls: ['./beer-list.component.css'],
 })
 export class BeerListComponent implements OnInit {
-  constructor(private beerService: BeerService) {}
-  beers = this.beerService.getBeersList();
+  constructor(public beerService: BeerService) {}
 
   ngOnInit() {}
 }

@@ -13,5 +13,6 @@ export class BeerService {
 
   deleteBeer(item: Beer) {
     this.beers = this.beers.filter((beer) => beer.id !== item.id);
+    console.log(this.beers);
   }
 }
