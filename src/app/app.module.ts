@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { BeerListComponent } from './components/beer-list/beer-list.component';
@@ -10,7 +10,7 @@ import { BeerService } from './services/beer.service';
 import { BeerComponent } from './components/beer/beer.component';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, AppRoutingModule],
+  imports: [BrowserModule, FormsModule, AppRoutingModule, ReactiveFormsModule],
   providers: [BeerService],
   declarations: [
     AppComponent,
