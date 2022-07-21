@@ -6,10 +6,12 @@ import * as Actions from '../store/actions';
 const initialBeerState: BeerState = { list: beersData };
 export const beerReducers = createReducer(initialBeerState);
 
-export const deleteReducers = createReducer(
+export const deleteReduce = createReducer(
   initialBeerState,
-  on(Actions.deleteBeerActions, (state: BeerState, args: { id: number }) => ({
-    ...state,
-    list: state.list.filter((beer) => beer.id != args.id),
+
+  on(Actions.deleteBeerActions, (stateBeers, arg: { id: number }) => ({
+    ...stateBeers,
+
+    list: stateBeers.list.filter((beer) => beer.id != arg.id),
   }))
 );
