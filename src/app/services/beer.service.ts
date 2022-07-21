@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 import { beersData } from '../data/beer-list';
 import { Beer } from '../model/model';
 import { beerSelectors } from '../store/selectors';
@@ -9,7 +10,7 @@ export class BeerService {
   beers: Beer[] = beersData;
   constructor(private store: Store) {}
 
-  getBeersList() {
+  getBeersList(): Observable<Beer[]> {
     return this.store.select(beerSelectors);
   }
 
