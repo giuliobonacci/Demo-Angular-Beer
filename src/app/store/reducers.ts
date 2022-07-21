@@ -14,10 +14,19 @@ export const deleteReduce = createReducer(
     ...stateBeers,
 
     list: stateBeers.list.filter((beer) => beer.id != arg.id),
-  }))
+  })),
+  on(Actions.addBeerActions, (state: BeerState, arg: { beer: Beer }) => {
+    //state.list.push(arg.beer);
+    return {
+      state,
+      list: [...state.list, arg.beer],
+    };
+  })
 );
 
+/* Non funzionante perchè NGRX ci blocca
 function pushBeer(state: BeerState, beer: Beer): Beer[] {
-  state.list.unshift(beer);
+  state.list.push(beer);
   return state.list;
 }
+*/
