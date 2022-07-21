@@ -24,7 +24,10 @@
 <div class="card-shadow">
   <h5 class="card-header">Beer List</h5>
   <div class="card-body">
-    <ul class="list-group" *ngFor="let beer of beerService.beers">
+    <ul
+      class="list-group"
+      *ngFor="let beer of beerService.getBeersList() | async"
+    >
       <app-beer [beer]="beer"></app-beer>
     </ul>
   </div>
