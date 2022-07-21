@@ -3,7 +3,7 @@ import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { beersData } from '../data/beer-list';
 import { Beer } from '../model/model';
-import { deleteBeerActions } from '../store/actions';
+import { addBeerActions, deleteBeerActions } from '../store/actions';
 import { beerSelectors } from '../store/selectors';
 
 @Injectable({ providedIn: 'root' })
@@ -27,6 +27,7 @@ export class BeerService {
     return maxId + 1;
   }
   addBeer(beer: Beer) {
-    this.beers.unshift(beer);
+    //this.beers.unshift(beer);
+    this.store.dispatch(addBeerActions({ beer: beer }));
   }
 }
