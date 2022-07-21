@@ -1,14 +1,16 @@
 import { Injectable } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { beersData } from '../data/beer-list';
 import { Beer } from '../model/model';
+import { beerSelectors } from '../store/selectors';
 
 @Injectable({ providedIn: 'root' })
 export class BeerService {
   beers: Beer[] = beersData;
-  constructor() {}
+  constructor(private store: Store) {}
 
   getBeersList() {
-    return this.beers;
+    return this.store.select(beerSelectors);
   }
 
   deleteBeer(item: Beer) {

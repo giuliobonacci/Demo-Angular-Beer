@@ -8,7 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { BeerFormComponent } from './components/beer-form/beer-form.component';
 import { BeerService } from './services/beer.service';
 import { BeerComponent } from './components/beer/beer.component';
-import { StoreModule } from '@ngrx/store/src';
+import { StoreModule } from '@ngrx/store';
 import { AppState } from './model/state';
 import { beerReducers } from './store/reducers';
 
@@ -18,7 +18,7 @@ import { beerReducers } from './store/reducers';
     FormsModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    StoreModule.forRoot<AppState>({beerState: beerReducers })
+    StoreModule.forRoot<AppState>({ beerState: beerReducers }),
   ],
   providers: [BeerService],
   declarations: [
