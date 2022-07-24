@@ -11,6 +11,7 @@ import { BeerComponent } from './components/beer/beer.component';
 import { StoreModule } from '@ngrx/store';
 import { AppState } from './model/state';
 import { deleteReduce } from './store/reducers';
+import { BeerDetailComponent } from './components/beer-detail/beer-detail.component';
 
 @NgModule({
   imports: [
@@ -26,6 +27,7 @@ import { deleteReduce } from './store/reducers';
     BeerListComponent,
     BeerFormComponent,
     BeerComponent,
+    BeerDetailComponent,
   ],
   bootstrap: [AppComponent],
 })
